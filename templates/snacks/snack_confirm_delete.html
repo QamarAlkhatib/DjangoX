@@ -1,8 +1,11 @@
-{% extends "_snack_base.html" %}
+{% extends "_snacks_base.html" %}
 
-
-{% block title %}delete a snack{% endblock %}
+{% block title %} Delete Snack {% endblock %}
 
 {% block content %}
-<h1>delete a snack</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{snacks}}"?</p>
+    <input type="submit" value="Confirm">
+</form>
 {% endblock %}

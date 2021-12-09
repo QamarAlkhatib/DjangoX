@@ -13,28 +13,29 @@ from .models import Snacks
 
 
 class SnacksListView(ListView):
-    template_name = "snack/snack_list.html"
+    template_name = "snacks/snack_list.html"
     model = Snacks
 
 
 class SnacksDetailView(DetailView):
-    template_name = "snack/snack_detail.html"
+    template_name = "snacks/snack_detail.html"
     model = Snacks
 
 
 class SnacksCreateView(CreateView):
-    template_name = "snack/snack_create.html"
+    template_name = "snacks/snack_create.html"
     model = Snacks
-    fields = []
+    fields = ['title', 'purchaser', 'description']
+
 
 
 class SnacksUpdateView(UpdateView):
-    template_name = "snack/snack_update.html"
+    template_name = "snacks/snack_update.html"
     model = Snacks
-    fields = []
+    fields = ['title', 'purchaser', 'description']
 
 
 class SnacksDeleteView(DeleteView):
-    template_name = "snack/snack_confirm_delete.html"
+    template_name = "snacks/snack_confirm_delete.html"
     model = Snacks
-    success_url = reverse_lazy("_list") 
+    success_url = reverse_lazy("snack_list") 
